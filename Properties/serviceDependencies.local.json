@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+   
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "TestContextConnection"
+    }
+  }
+}
