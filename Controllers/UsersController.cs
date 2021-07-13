@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-
 using Microsoft.AspNetCore.Authorization;
 using HaniApi.Dto;
-using System.ComponentModel.DataAnnotations;
 using HaniApi.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.WebUtilities;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using HaniApi.Config;
@@ -77,39 +70,6 @@ namespace HaniApi.Controllers
 				return new JsonResult(new ApiResult { ResultCode = ResultCode.Error, ResultMessage = "You login info is invalid" });
 			}
 
-		}
-
-		public class RegisterViewModel
-		{
-			public string UserName { get; set; }
-
-			public string FirstName { get; set; }
-			public string LastName { get; set; }
-
-			[Required]
-			[StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
-			[DataType(DataType.Password)]
-			[Display(Name = "Password")]
-			public string Password { get; set; }
-
-			[DataType(DataType.Password)]
-			[Display(Name = "Confirm password")]
-			[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-			public string ConfirmPassword { get; set; }
-
-		}
-
-		public class ApiResult
-		{
-			public ResultCode ResultCode { get; set; } = ResultCode.Success;
-			public string ResultMessage { get; set; }
-		}
-
-		public enum ResultCode
-		{
-			Success = 0,
-			TwoFactoreEnabled = 1,
-			Error = 2
 		}
 
 		[HttpPost("Register")]

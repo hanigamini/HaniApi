@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace HaniApi.Areas.Identity.Data
 {
-    // Add profile data for application users by adding properties to the HaniUser class
-    public class HaniUser : IdentityUser
+	public class HaniUser : IdentityUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
