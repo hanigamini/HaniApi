@@ -32,7 +32,7 @@ namespace HaniApi.Controllers
 		[HttpPost("GetWeather")]
 		public void GetWeather(GetWeatherForecast info)
 		{
-			string appId = "appId";
+			string appId = "8760a47cac26ab2fc5ac27c174056cac";
 
 			string url = $"http://api.openweathermap.org/data/2.5/weather?lat={info.lat}&lon={info.lon}&appid={appId}&units=metric";
 
